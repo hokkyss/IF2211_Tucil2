@@ -7,10 +7,10 @@ location = os.getcwd();
 
 class Convert_To_Graph:
     theGraph = [];
-    courseCodes = [];
+    courseByID = [];
     numberOfLines = 0;
     def __init__(self, inputFileName):
-        self.formattingFile(inputFileName, 'outputFile.txt')
+        self.formattingFile('test/' + inputFileName, 'outputFile.txt')
         self.theGraph = self.takeFormattedFile('outputFile.txt')
         self.theGraph = self.intoAdjacencyList()
         self.theGraph = self.intoCourseAndPrereq()
@@ -47,7 +47,7 @@ class Convert_To_Graph:
         for row in isifile:
             complete.append([])
             for kolom in row:
-                complete[self.numberOfLines].append(int(kolom))
+                complete[self.numberOfLines].append(kolom)
             self.numberOfLines += 1
             
         return complete
@@ -55,7 +55,7 @@ class Convert_To_Graph:
     def intoAdjacencyList(self):
         temporaryGraph = []
         for i in range(0, self.numberOfLines, 1):
-            self.courseCodes.append(self.theGraph[i][0])
+            self.courseByID.append(self.theGraph[i][0])
             temporaryGraph.append([])
             for j in range(1, len(self.theGraph[i]), 1):
                 temporaryGraph[i].append(self.theGraph[i][j])
@@ -65,5 +65,5 @@ class Convert_To_Graph:
     def intoCourseAndPrereq(self):
         temporaryGraph = []
         for i in range(0, self.numberOfLines, 1):
-            temporaryGraph.append([self.courseCodes[i], len(self.theGraph[i]), self.theGraph[i]])
+            temporaryGraph.append([self.courseByID[i], len(self.theGraph[i]), self.theGraph[i]])
         return temporaryGraph

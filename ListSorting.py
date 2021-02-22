@@ -13,8 +13,8 @@ class Sort_The_List :
 
     def Merge(self, list, firstIndex, middleIndex, lastIndex, comparedIndex):
         result = []
-        for i in list:
-            result.append(i)
+        for isi in list:
+            result.append(isi)
             
         p = firstIndex
         q = middleIndex + 1
