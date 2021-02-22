@@ -8,4 +8,4 @@ import math
 Modul1 = im('FileFormatting')
 CTG = Modul1.Convert_To_Graph('matkul.txt');
 
-print(CTG.graf)
+print(CTG.theGraph)
