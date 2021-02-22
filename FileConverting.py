@@ -13,6 +13,7 @@ class Convert_To_Graph:
         self.formattingFile(inputFileName, 'outputFile.txt')
         self.theGraph = self.takeFormattedFile('outputFile.txt')
         self.theGraph = self.intoAdjacencyList()
+        self.theGraph = self.intoCourseAndPrereq()
     ''' FOR TESTING PURPOSE
     def Testing(self):
         print('AAAAAA')
@@ -59,4 +60,10 @@ class Convert_To_Graph:
             for j in range(1, len(self.theGraph[i]), 1):
                 temporaryGraph[i].append(self.theGraph[i][j])
                       
+        return temporaryGraph
+
+    def intoCourseAndPrereq(self):
+        temporaryGraph = []
+        for i in range(0, self.numberOfLines, 1):
+            temporaryGraph.append([self.courseCodes[i], self.theGraph[i], len(self.theGraph[i])])
         return temporaryGraph
