@@ -9,3 +9,7 @@ Modul1 = im('FileFormatting')
 CTG = Modul1.Convert_To_Graph('matkul.txt');
 
 print(CTG.theGraph)
+print(CTG.courseCodes)
+
+for i in range(CTG.numberOfLines):
+    print(str(CTG.courseCodes[i]) + ' ' + str(CTG.theGraph[i]))

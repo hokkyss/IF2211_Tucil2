@@ -1,15 +1,13 @@
 import os
-# import nltk
 import csv
 import importlib
 import math
-
-# from nltk.stem import PorterStemmer
 
 location = os.getcwd();
 
 class Convert_To_Graph:
     theGraph = [];
+    courseCodes = [];
     numberOfLines = 0;
     def __init__(self, inputFileName):
         self.formattingFile(inputFileName, 'outputFile.txt')
@@ -56,6 +54,7 @@ class Convert_To_Graph:
     def intoAdjacencyList(self):
         temporaryGraph = []
         for i in range(0, self.numberOfLines, 1):
+            self.courseCodes.append(self.theGraph[i][0])
             temporaryGraph.append([])
             for j in range(1, len(self.theGraph[i]), 1):
                 temporaryGraph[i].append(self.theGraph[i][j])
