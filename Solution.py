@@ -1,17 +1,19 @@
-import os
-import csv
-import invoke
 # import importlib
 from importlib import import_module as im
 import math
 
 # Modul1 = importlib.import_module('FileFormatting')
-Modul1 = im('FileConverting')
-CTG = Modul1.Convert_To_Graph('matkul.txt');
+ConverterModule = im('FileConverting')
+SortModule = im('ListSorting')
+Converter = ConverterModule.Convert_To_Graph('matkul.txt');
+Sorter = SortModule.Sort_The_List()
 
-print(CTG.theGraph)
+# print(Converter.theGraph)
 # print(CTG.courseCodes)
 
-for i in range(CTG.numberOfLines):
-    print(str(CTG.theGraph[i]))
+for i in range(Converter.numberOfLines):
+    print(str(Converter.theGraph[i]))
 
+hasil = Sorter.Sort(Converter.theGraph, 1, Converter.numberOfLines)
+for i in range(Converter.numberOfLines):
+    print(str(hasil[i]))

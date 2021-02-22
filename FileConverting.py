@@ -65,5 +65,5 @@ class Convert_To_Graph:
     def intoCourseAndPrereq(self):
         temporaryGraph = []
         for i in range(0, self.numberOfLines, 1):
-            temporaryGraph.append([self.courseCodes[i], self.theGraph[i], len(self.theGraph[i])])
+            temporaryGraph.append([self.courseCodes[i], len(self.theGraph[i]), self.theGraph[i]])
         return temporaryGraph
