@@ -1,35 +1,36 @@
-import os
 import csv
-import importlib
-import math
-
-location = os.getcwd();
 
 class Convert_To_Graph:
     theGraph = [];
     courseByID = [];
     numberOfLines = 0;
     def __init__(self, inputFileName):
+        # perlihatkan isi file
+        self.printFileContent(inputFileName)
+        # tahap pertama langkah 2.
         self.formattingFile('test/' + inputFileName, 'outputFile.txt')
+        # tahap pertama langkah 3.
         self.theGraph = self.takeFormattedFile('outputFile.txt')
+        # tahap pertana langkah 5.
         self.theGraph = self.intoAdjacencyList()
+        # tahap pertama langkah 6.
         self.theGraph = self.intoCourseAndPrereq()
-    ''' FOR TESTING PURPOSE
-    def Testing(self):
-        print('AAAAAA')
-        return
-    FOR TESTING PURPOSE '''
 
+    def printFileContent(self, inputFileName):
+        inputFile = open('test/' + str(inputFileName))
+        for i in inputFile:
+            print(i, end = '')
+        inputFile.close()
+        
     def formattingFile(self, inputFileName, outputFileName):
         inputFile = open(str(inputFileName))
-
-        isifile = csv.reader(inputFile, delimiter = ",")
+        fileContent = csv.reader(inputFile, delimiter = ",")
         list = []
-        
-        for row in isifile:
-            isi = f'{"".join(row)}'
-            lenisi = len(isi)
-            list.append(isi[:lenisi - 1])
+
+        for row in fileContent:
+            content = f'{"".join(row)}'
+            contentLength = len(content)
+            list.append(content[:contentLength - 1])
 
         outputFile = open(outputFileName, 'w')
         for row in list:
