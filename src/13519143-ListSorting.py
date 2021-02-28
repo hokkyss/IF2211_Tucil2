@@ -1,4 +1,7 @@
+''' Referensi : powerpoint kuliah '''
 class Sort_The_List :
+    # comparedIndex adalah nilai yang akan dibandingkan
+    # dari theGraph, comparedIndex nya adalah 1 karena jumlahprereq terletak pada indeks 1
     def Sort(self, list, comparedIndex, length):
         return self.MergeSort(list, 0, length - 1, comparedIndex)
 

@@ -1,2 +1,2 @@
-__pycache__
-outputFile.txt
+src/__pycache__
+test/outputFile.txt

@@ -1,7 +1,7 @@
 from importlib import import_module as im
 
-ConverterModule = im('FileConverting')
-SortModule = im('ListSorting')
+ConverterModule = im('13519143-FileConverting')
+# SortModule = im('13519143-ListSorting')
 
 inputFileName = input('Masukkan nama file : ')
 Converter = ConverterModule.Convert_To_Graph(inputFileName);
@@ -35,7 +35,6 @@ while(numberOfTakenCourse < Converter.numberOfLines):
                 j[1] -= 1
     ''' hapus matkul yang sudah diambil dari prereq matkul lainnya '''
 
-print()
 for i in range(1, semester + 1, 1):
     print(f'Semester {i}:', end='')
     for matkul in takenCourse[i]:
